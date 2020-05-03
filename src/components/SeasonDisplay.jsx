@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 
 
@@ -15,10 +16,16 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = props => {
 
 const season = getSeason(props.lat, new Date().getMonth())
+const seasonText = season === 'winter'? "Get a Jacket its chilly" : "Lets hit the beach its Summer time"
+// const icon = season === 'winter'? 'snowflakes': 'sun'
 
-console.log(season)
-
-    return <div>Season Display</div>
+    return (
+    <div className= 'container'>
+        <h1>
+            {seasonText}   
+         </h1>
+    </div>
+    )
 }
 
 
